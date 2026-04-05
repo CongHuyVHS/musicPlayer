@@ -23,7 +23,7 @@ let musics = [
     {
         name: "Ghost + guest",
         artist: "Louie Zong",
-        src: "ghost03.mp3",
+        src: "music/ghost03.mp3",
     }
 ]
 
@@ -44,11 +44,13 @@ function playPauseSong(){
     }
     else pauseSong();
 }
+
 function playSong(){
     currentSong.play();
     isPlaying = true;
     playBtn.querySelector('img').src = 'img/pause.png';
 }
+
 function pauseSong(){
     currentSong.pause();
     isPlaying = false;
@@ -63,6 +65,7 @@ function nextSong(){
     loadSong(songIndex);
     playSong();
 }
+
 function prevSong(){
     if(songIndex > 0){
         songIndex--;

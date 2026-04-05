@@ -7,6 +7,7 @@
 
 body {
   height: 100vh;
+  -webkit-app-region: drag;
   overflow: hidden;
 }
 
@@ -57,6 +58,7 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
+  -webkit-app-region: no-drag;
 }
 
 .controls img {
@@ -65,12 +67,14 @@ body {
   object-fit: contain;
   cursor: pointer;
   transition: 0.2s;
+  -webkit-app-region: no-drag;
 }
 
 /* Make play button bigger */
 #play {
   width: 70px;
   height: 70px;
+  -webkit-app-region: no-drag;
 }
 
 .controls img:hover {

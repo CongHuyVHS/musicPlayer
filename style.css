@@ -36,19 +36,31 @@ body {
   padding-bottom: 80px;
   color: black;
 }
+.song-art {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  margin-bottom: 30px;
 
-.track-info {
+  background-image: url("img/music01.png"); 
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.song-info {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.track-info h2 {
+.song-info h2 {
   font-size: 28px;
   letter-spacing: 4px;
   font-weight: bold;
 }
 
-.track-info p {
+.song-info p {
   opacity: 0.6;
   font-size: 14px;
 }

@@ -1,5 +1,6 @@
 let songTitle = document.getElementById('title');
 let songArtist = document.getElementById('artist');
+let songArt = document.querySelector('.song-art');
 let previousBtn = document.querySelector('.prev-button');
 let playBtn = document.querySelector('.play-button');
 let nextBtn = document.querySelector('.next-button');
@@ -12,17 +13,20 @@ let musics = [
     {
         name: "Ghost duet",
         artist: "Louie Zong",
+        img:"img/music01.png",
         src: "music/ghost01.mp3",
     },
 
     {
         name: "Ghost choir",
         artist: "Louie Zong",
+        img:"img/music02.png",
         src: "music/ghost02.mp3",
     },
     {
         name: "Ghost + guest",
         artist: "Louie Zong",
+        img:"img/music03.png",
         src: "music/ghost03.mp3",
     }
 ]
@@ -34,6 +38,7 @@ function loadSong(songIndex){
 
     songTitle.textContent = musics[songIndex].name;
     songArtist.textContent = musics[songIndex].artist;
+    songArt.style.backgroundImage = `url(${musics[songIndex].img})`;
 
     currentSong.addEventListener('ended', nextSong); 
 }

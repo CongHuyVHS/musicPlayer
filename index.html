@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Music Player</title>
+  <meta charset="UTF-8" />
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="player">
-        <div class="song-info">
-            <div class="song-title">Song Title</div>
-            <div class="song-artist">Artist Name</div>
+
+  <div class="background"></div>
+
+  <div class="player">
+    <div class="track-info">
+      <h2 id="title">Ghost duet</h2>
+      <p id="artist">Louie Zong</p>
+    </div>
+
+    <div class="controls">
+        <div class="prev-button" onclick="prevSong()">
+            <img src="img/back.png" alt="Previous" />
         </div>
-        
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-            <div class="time-display">
-                <span class="current-time">0:00</span>
-                <span class="duration">3:45</span>
-            </div>
+        <div class="play-button" onclick="playPauseSong()">
+            <img src="img/continue.png" alt="Play/Pause" id="play-pause-icon" />
         </div>
-        
-        <div class="controls">
-            <button id="prevBtn"><img src="img/back.png" alt="Previous"></button>
-            <button id="playBtn"><img src="img/pause.png" alt="Play/Pause"></button>
-            <button id="nextBtn"><img src="img/next.png" alt="Next"></button>
-        </div>
-        
-        <div class="playlist">
-            <div class="playlist-title">Playlist</div>
-            <div class="playlist-item active">Song 1 - Artist</div>
-            <div class="playlist-item">Song 2 - Artist</div>
-            <div class="playlist-item">Song 3 - Artist</div>
+        <div class="next-button" onclick="nextSong()">
+            <img src="img/next.png" alt="Next" />
         </div>
     </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="renderer.js"></script>
 </body>
 </html>

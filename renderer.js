@@ -1,0 +1,74 @@
+let songTitle = document.getElementById('title');
+let songArtist = document.getElementById('artist');
+let previousBtn = document.querySelector('.prev-button');
+let playBtn = document.querySelector('.play-button');
+let nextBtn = document.querySelector('.next-button');
+let currentSong = document.createElement('audio');
+let songIndex = 0; 
+let isPlaying = false;
+
+
+let musics = [
+    {
+        name: "Ghost duet",
+        artist: "Louie Zong",
+        src: "music/ghost01.mp3",
+    },
+
+    {
+        name: "Ghost choir",
+        artist: "Louie Zong",
+        src: "music/ghost02.mp3",
+    },
+    {
+        name: "Ghost + guest",
+        artist: "Louie Zong",
+        src: "ghost03.mp3",
+    }
+]
+
+
+function loadSong(songIndex){
+    currentSong.src = musics[songIndex].src;
+    currentSong.load();
+
+    songTitle.textContent = musics[songIndex].name;
+    songArtist.textContent = musics[songIndex].artist;
+
+    currentSong.addEventListener('ended', nextSong); 
+}
+
+function playPauseSong(){
+    if(!isPlaying){
+        playSong()
+    }
+    else pauseSong();
+}
+function playSong(){
+    currentSong.play();
+    isPlaying = true;
+    playBtn.querySelector('img').src = 'img/pause.png';
+}
+function pauseSong(){
+    currentSong.pause();
+    isPlaying = false;
+    playBtn.querySelector('img').src = 'img/continue.png';
+}
+
+function nextSong(){
+    if(songIndex < musics.length - 1){
+        songIndex++;
+    }
+    else songIndex = 0; 
+    loadSong(songIndex);
+    playSong();
+}
+function prevSong(){
+    if(songIndex > 0){
+        songIndex--;
+    }
+    else songIndex = musics.length - 1;
+    loadSong(songIndex);
+    playSong();
+}
+

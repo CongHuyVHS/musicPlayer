@@ -5,6 +5,7 @@ let previousBtn = document.querySelector('.prev-button');
 let playBtn = document.querySelector('.play-button');
 let nextBtn = document.querySelector('.next-button');
 let currentSong = document.createElement('audio');
+let volumeSlider = document.querySelector('.volume_slider');
 let songIndex = 0; 
 let isPlaying = false;
 
@@ -80,3 +81,6 @@ function prevSong(){
     playSong();
 }
 
+function setVolume(){
+    currentSong.volume = volumeSlider.value / 100;
+}

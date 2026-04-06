@@ -41,7 +41,7 @@ function loadSong(songIndex){
     songArtist.textContent = musics[songIndex].artist;
     songArt.style.backgroundImage = `url(${musics[songIndex].img})`;
 
-    currentSong.addEventListener('ended', nextSong); 
+    currentSong.onended = nextSong; 
 }
 
 function playPauseSong(){
@@ -84,3 +84,11 @@ function prevSong(){
 function setVolume(){
     currentSong.volume = volumeSlider.value / 100;
 }
+
+function closeApp() {
+    window.electronAPI.closeWindow();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    loadSong(songIndex);
+});

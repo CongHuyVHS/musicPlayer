@@ -108,6 +108,7 @@ body {
   align-items: center;
   -webkit-app-region: no-drag;
 }
+
 .seek_slider:hover,
 .volume_slider:hover {
   opacity: 1.0;
